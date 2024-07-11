@@ -1,3 +1,10 @@
+// Initial call to display the countdown immediately
+updateCountdown();
+
+// Update the countdown every second
+setInterval(updateCountdown, 1000);
+
+
 
 function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
@@ -34,3 +41,26 @@ function onclickFireworkbtn() {
     document.querySelector("button[name='btn-firework']").style.transform = 'scale(1)';
   }, 300); // 300ms or same duration as CSS transition
 }
+
+// Countdown logic
+function updateCountdown() {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const nextSilvester = new Date(`December 31, ${currentYear} 23:59:59`);
+  
+  const totalSeconds = (nextSilvester - now) / 1000;
+
+  const days = Math.floor(totalSeconds / 3600 / 24);
+  const hours = Math.floor(totalSeconds / 3600) % 24;
+  const minutes = Math.floor(totalSeconds / 60) % 60;
+  const seconds = Math.floor(totalSeconds) % 60;
+
+  document.getElementById('days').innerText = days;
+  document.getElementById('hours').innerText = hours;
+  document.getElementById('minutes').innerText = minutes;
+  document.getElementById('seconds').innerText = seconds;
+}
+
+
+
+
