@@ -1,10 +1,14 @@
-// Initial call to display the countdown immediately
-updateCountdown();
+document.addEventListener("DOMContentLoaded", onLoaded);
 
-// Update the countdown every second
-setInterval(updateCountdown, 1000);
+function onLoaded() {
+  console.log("onloaded");
 
+  // Initial call to display the countdown immediately
+  updateCountdown();
 
+  // Update the countdown every second
+  setInterval(updateCountdown, 1000);
+}
 
 function randomInRange(min, max) {
   return Math.random() * (max - min) + min;
@@ -14,7 +18,7 @@ function onclickFireworkbtn() {
   var duration = 15 * 1000;
   var animationEnd = Date.now() + duration;
   var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
-  
+
   var interval = setInterval(function () {
     var timeLeft = animationEnd - Date.now();
 
@@ -37,8 +41,9 @@ function onclickFireworkbtn() {
   }, 250);
 
   // Reset button style after click
-  setTimeout(function() {
-    document.querySelector("button[name='btn-firework']").style.transform = 'scale(1)';
+  setTimeout(function () {
+    document.querySelector("button[name='btn-firework']").style.transform =
+      "scale(1)";
   }, 300); // 300ms or same duration as CSS transition
 }
 
@@ -47,7 +52,7 @@ function updateCountdown() {
   const now = new Date();
   const currentYear = now.getFullYear();
   const nextSilvester = new Date(`December 31, ${currentYear} 23:59:59`);
-  
+
   const totalSeconds = (nextSilvester - now) / 1000;
 
   const days = Math.floor(totalSeconds / 3600 / 24);
@@ -55,16 +60,13 @@ function updateCountdown() {
   const minutes = Math.floor(totalSeconds / 60) % 60;
   const seconds = Math.floor(totalSeconds) % 60;
 
-  console.log(days, hours, minutes, seconds);
+  const daysElement = document.getElementsByName("days")[0];
+  const hoursElement = document.getElementsByName("hours")[0];
+  const minutesElement = document.getElementsByName("minutes")[0];
+  const secondsElement = document.getElementsByName("seconds")[0];
 
-  document.getElementById('days').innerText = days;
-  document.getElementById('hours').innerText = hours;
-  document.getElementById('minutes').innerText = minutes;
-  document.getElementById('seconds').innerText = seconds;
-
-  console.log(document.getElementById('seconds'));
+  if (daysElement) daysElement.innerText = days;
+  if (hoursElement) hoursElement.innerText = hours;
+  if (minutesElement) minutesElement.innerText = minutes;
+  if (secondsElement) secondsElement.innerText = seconds;
 }
-
-
-
-
