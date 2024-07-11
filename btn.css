@@ -54,3 +54,23 @@ button:active {
         0 0 2.5em 2em var(--glow-spread-color),
         inset 0 0 .5em .25em var(--glow-color);
 }*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+}
+
+#countdown {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+
+
