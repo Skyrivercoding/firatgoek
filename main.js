@@ -28,4 +28,9 @@ function onclickFireworkbtn() {
       origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
     });
   }, 250);
+
+  // Reset button style after click
+  setTimeout(function() {
+    document.querySelector("button[name='btn-firework']").style.transform = 'scale(1)';
+  }, 300); // 300ms or same duration as CSS transition
 }
