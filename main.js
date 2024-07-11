@@ -55,10 +55,14 @@ function updateCountdown() {
   const minutes = Math.floor(totalSeconds / 60) % 60;
   const seconds = Math.floor(totalSeconds) % 60;
 
+  console.log(days, hours, minutes, seconds);
+
   document.getElementById('days').innerText = days;
   document.getElementById('hours').innerText = hours;
   document.getElementById('minutes').innerText = minutes;
   document.getElementById('seconds').innerText = seconds;
+
+  console.log(document.getElementById('seconds'));
 }
 
 
