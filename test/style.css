@@ -70,3 +70,41 @@ body {
   margin-top: 20px;
   font-size: 2rem;
 }
+
+a {
+  --link-color: #61dafb; /* Light blue color for links */
+  text-decoration: none; /* Remove underline */
+  padding: 8px 16px; /* Padding around the link */
+  border: 2px solid transparent; /* Transparent border initially */
+  border-radius: 4px; /* Rounded corners */
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--link-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--link-color);
+  z-index: -1;
+  transition: transform 0.4s ease;
+  transform: scaleX(0); /* Initially hidden */
+  transform-origin: right;
+}
+
+a:hover::before {
+  transform: scaleX(1); /* Expand the background on hover */
+  transform-origin: left;
+}
+
+a:hover {
+  color: #282c34; /* Text color on hover */
+  background-color: transparent; /* No background color on hover */
+}
