@@ -15,7 +15,7 @@ showImagesButton.addEventListener('click', () => {
     showImages();
 });
 
-const test = new Date().now.getTime() +5000;
+const test = new Date().getTime() + 5000;
 
 let countdownInterval = setInterval(() => {
     const now = new Date();
