@@ -15,9 +15,12 @@ showImagesButton.addEventListener('click', () => {
     showImages();
 });
 
+const test = new Date().now.getTime() +5000;
+
 let countdownInterval = setInterval(() => {
     const now = new Date();
-    const newYear = new Date(now.getFullYear() + 1, 0, 1);
+    //const newYear = new Date(now.getFullYear() + 1, 0, 1);
+    const newYear = new Date(test);
     const diff = newYear - now;
 
     const totalTime = newYear - new Date(now.getFullYear(), 0, 1);
