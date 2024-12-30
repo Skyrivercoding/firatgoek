@@ -74,7 +74,9 @@ body {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
-    object-position: center; 
+    object-position: center;
+    transform: rotate(0deg);
+    image-orientation: from-image;
 }
 
 /* Show Images Button */
