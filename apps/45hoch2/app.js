@@ -21,7 +21,8 @@ let countdownInterval = setInterval(() => {
     const newYear = new Date(2025, 0, 1, 0, 0, 0);
     const diff = newYear - now;
 
-    const totalTime = newYear - new Date(2025, 0, 1, 0, 0, 0);
+    const totalTime = new Date(2025, 0, 1, 0, 0, 0) - new Date(2024, 0, 1, 0, 0, 0);
+
     const timeRemaining = diff;
     const progressPercentage = (timeRemaining / totalTime) * 100;
     progress.style.width = `${100 - progressPercentage}%`;
